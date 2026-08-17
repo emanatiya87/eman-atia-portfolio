@@ -1,13 +1,17 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { timeline, categoryLabels, type TimelineCategory } from "@/data/timeline";
+import {
+  timeline,
+  categoryLabels,
+  type TimelineCategory,
+} from "@/data/timeline";
 import { FilterTabs } from "@/components/FilterTabs";
 import { TimelineNode } from "@/components/Timeline/TimelineNode";
 
 type FilterValue = TimelineCategory | "all";
 
-const PAGE_SIZE = 7;
+const PAGE_SIZE = 4;
 
 const filterOptions: { value: FilterValue; label: string }[] = (
   Object.keys(categoryLabels) as FilterValue[]
@@ -24,7 +28,9 @@ export function Timeline() {
 
   const filteredEntries = useMemo(() => {
     const filtered =
-      filter === "all" ? timeline : timeline.filter((e) => e.category === filter);
+      filter === "all"
+        ? timeline
+        : timeline.filter((e) => e.category === filter);
     // already authored newest-first, but sort defensively by sortDate desc
     return [...filtered].sort((a, b) => (a.sortDate < b.sortDate ? 1 : -1));
   }, [filter]);
@@ -45,7 +51,11 @@ export function Timeline() {
         </div>
 
         <div className="mb-12 mt-6">
-          <FilterTabs options={filterOptions} active={filter} onChange={setFilter} />
+          <FilterTabs
+            options={filterOptions}
+            active={filter}
+            onChange={setFilter}
+          />
         </div>
 
         {/* Mobile: single left-aligned line */}
@@ -66,7 +76,10 @@ export function Timeline() {
             {entries.map((entry, i) => {
               const align = i % 2 === 0 ? "right" : "left";
               return (
-                <div key={entry.id} className="grid grid-cols-[1fr_auto_1fr] items-start gap-6">
+                <div
+                  key={entry.id}
+                  className="grid grid-cols-[1fr_auto_1fr] items-start gap-6"
+                >
                   {align === "right" ? (
                     <>
                       <TimelineNode entry={entry} align="right" />
@@ -87,7 +100,9 @@ export function Timeline() {
         </div>
 
         {entries.length === 0 && (
-          <p className="text-center text-sm text-muted">No entries in this category yet.</p>
+          <p className="text-center text-sm text-muted">
+            No entries in this category yet.
+          </p>
         )}
 
         {hasMore && (
