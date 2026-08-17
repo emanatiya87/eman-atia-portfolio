@@ -96,7 +96,7 @@ export const timeline: TimelineEntry[] = [
     date: "TBD — confirm dates", // TODO: confirm display date
     title: "MERN Stack Track",
     org: "DEPI (Digital Egypt Pioneers Initiative, Ministry of Education)",
-    logo: "/logos/depi.png",
+    logo: "/logos/depi.jpg",
     category: "education",
     status: "completed",
     description: "Government-run training track covering the MERN stack.", // TODO: add more detail on what was built
@@ -121,7 +121,7 @@ export const timeline: TimelineEntry[] = [
     date: "Jun 2024 — Aug 2024",
     title: "Front-End Development Intern",
     org: "Link Development",
-    logo: "/logos/link-development.png",
+    logo: "/logos/link-development.jpg",
     category: "work",
     status: "completed",
     description:
@@ -134,7 +134,7 @@ export const timeline: TimelineEntry[] = [
     date: "Feb 2024",
     title: "Content Creator & Instructor",
     org: "ACES Student Activity",
-    logo: "/logos/aces.png",
+    logo: "/logos/aces.jpg",
     category: "teaching",
     status: "completed",
     description:
@@ -147,7 +147,7 @@ export const timeline: TimelineEntry[] = [
     date: "Feb 2024",
     title: "Employer Relations Volunteer",
     org: "ASU Career Center",
-    logo: "/logos/asu-career-center.png",
+    logo: "/logos/asu-career-center.jpg",
     category: "activity",
     status: "completed",
     description: "Coordinated with HR professionals from Elsewedy Group.",
@@ -159,7 +159,7 @@ export const timeline: TimelineEntry[] = [
     date: "Jun 2023",
     title: "Participant",
     org: "MECA Academy (ExxonMobil)",
-    logo: "/logos/meca.png",
+    logo: "/logos/mobile.png",
     category: "activity",
     status: "completed",
     description:
