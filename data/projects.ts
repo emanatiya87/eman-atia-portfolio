@@ -95,6 +95,49 @@ export const projects: Project[] = [
       "Successfully launched a scalable e-commerce platform that bridged social traffic to direct web conversions. The PWA achieved 90+ Lighthouse performance scores, significantly streamlined order management for the client, and established immediate trust through clear pricing, exact sizing guides, and 24/7 customer support accessibility.",
   },
   {
+    id: "lms",
+    title: "LMS — Learning Management System",
+    image: "/projects/lms.png",
+    tech: [
+      "React 18 • Redux Toolkit • React Router v6",
+      "Tailwind CSS • Material-UI (MUI)",
+      "Firebase Auth • Firestore • Cloud Storage",
+      "Stripe Checkout • Webhooks Ready",
+      "Role-Based Access Control (RBAC)",
+      "Responsive Mobile-First Design",
+    ],
+    category: "internship",
+    featured: true,
+    githubUrl: "https://github.com/emanatiya87/Lms",
+    description:
+      "A full-featured Learning Management System with Google Auth, Stripe payments, and dynamic role-based interfaces for tutors and students.",
+
+    problem:
+      "Educational platforms often lack flexible role management, secure payment integration, and a unified experience for both content creators (tutors) and learners (students). Existing solutions are either too complex, expensive, or not customizable for independent educators.",
+
+    approach:
+      "Built a responsive React application with Tailwind CSS and Material-UI for a polished UI. Implemented Firebase for authentication (Google Sign-In), Firestore for real-time data, and Cloud Storage for course assets. Integrated Stripe Checkout for secure course purchases. Designed a role-based architecture where user role ('tutor' | 'student') stored in Firestore dynamically controls dashboard views, navigation, and available actions. Used Redux Toolkit for predictable state management across course CRUD, enrollment, and payment flows.",
+
+    result:
+      "Delivered a scalable LMS where tutors can create, manage, and monetize courses while students seamlessly discover, purchase, and track learning progress. Achieved 100% client-side security with protected routes, reduced boilerplate by 40% using Redux Toolkit slices, and ensured responsive UX across devices. The modular architecture allows easy extension for features like certificates, quizzes, or live sessions.",
+  },
+  {
+    id: "recipes-app",
+    title: "Recipe App",
+    image: "/projects/recipeapp.png",
+    description:
+      "A modern React Native recipe app with search, favorites, persistent storage (AsyncStorage), and clean navigation. Built with DummyJSON API.",
+    tech: ["React Native", "TypeScript", "AsyncStorage", "React Navigation"],
+    category: "internship",
+    featured: true,
+    problem:
+      "Users struggle to discover, organize, and reliably save recipes across fragmented platforms. Technically, developers face challenges building mobile apps that seamlessly handle API data, persistent local storage, real-time search, and smooth navigation without compromising performance or user experience.",
+    approach:
+      "Built a React Native application using React Context API for centralized state management and @react-native-async-storage/async-storage for persistent favorites. Integrated the DummyJSON API to fetch 100+ recipes, implemented FlatList with optimized rendering, and added debounced real-time search filtering across name, cuisine, and ingredients. Architected modular navigation with React Native Stack, handled loading/error/empty states, and ensured cross-device compatibility using react-native-safe-area-context.",
+    result:
+      "Delivered a fully functional, production-ready mobile app with instant search, zero-loss persistent favorites (survives app restarts), and a responsive modern UI. The codebase follows scalable architecture patterns, handles network failures gracefully, and demonstrates strong proficiency in React Native, state management, API integration, and mobile UX best practices.",
+  },
+  {
     id: "fedis-recipe-app",
     title: "Recipe App",
     image: "/projects/fedis-recipe-app.png",
