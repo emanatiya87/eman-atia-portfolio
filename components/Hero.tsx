@@ -82,6 +82,7 @@ export function Hero() {
 
         <div className="flex flex-wrap items-center justify-center gap-3">
           <a
+            target="_blank"
             href="/resume.pdf"
             download
             className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
@@ -93,6 +94,7 @@ export function Hero() {
             <a
               key={s.label}
               href={s.href}
+              target="_blank"
               className={cn(
                 "rounded-full border border-accent/30 px-5 py-2 text-sm font-medium text-foreground",
                 "transition-colors hover:border-accent hover:bg-accent/10",
