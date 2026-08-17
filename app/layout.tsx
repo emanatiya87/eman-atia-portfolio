@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
-// TODO: replace with your real deployed domain once you have one
-// (e.g. after deploying to Vercel, or a custom domain you buy).
-const siteUrl = "https://eman-atia-portfolio.vercel.app";
+const siteUrl = "https://eman-atia-portfolio-lyart.vercel.app/";
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
@@ -18,9 +16,10 @@ const sans = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const title = "Eman Atia — Front-End Developer (React & Next.js)";
+const title =
+  "Eman Atia — Front-End Developer in Cairo, Egypt (React & Next.js)";
 const description =
-  "Electrical Engineer by degree, front-end developer by craft. Portfolio of React, Next.js and TypeScript projects, internships and freelance work.";
+  "Eman Atia is a Cairo-based front-end developer specializing in React, Next.js and TypeScript. Electrical Engineering graduate turned software engineer, with experience across internships (ITI, FEDIS, Link Development), freelance CMS-driven web apps, and technical instruction. Available for freelance and full-time front-end roles.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -29,23 +28,33 @@ export const metadata: Metadata = {
     template: "%s — Eman Atia",
   },
   description,
+  applicationName: "Eman Atia — Portfolio",
+  category: "technology",
   keywords: [
     "Eman Atia",
     "Front-End Developer",
-    "React Developer",
+    "Front-End Developer Cairo",
+    "React Developer Egypt",
     "Next.js Developer",
-    "TypeScript",
+    "TypeScript Developer",
     "Web Developer Egypt",
     "Frontend Portfolio",
+    "React Next.js TypeScript Portfolio",
+    "ITI Front-End Graduate",
   ],
-  authors: [{ name: "Eman Atia" }],
+  authors: [{ name: "Eman Atia", url: siteUrl }],
   creator: "Eman Atia",
+  publisher: "Eman Atia",
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
     title,
     description,
     siteName: "Eman Atia — Portfolio",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
@@ -55,6 +64,15 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
+  formatDetection: {
+    email: true,
+    telephone: true,
   },
   // TODO: after deploying, get this from Google Search Console
   // (Settings → Ownership verification → HTML tag) and uncomment:
@@ -77,7 +95,17 @@ const personJsonLd = {
     "@type": "CollegeOrUniversity",
     name: "Ain Shams University",
   },
-  knowsAbout: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Front-End Development"],
+  knowsAbout: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Front-End Development",
+    "freelance",
+    "web development",
+    "software engineering",
+    "instructor",
+  ],
   // TODO: replace with real profile URLs
   sameAs: ["https://linkedin.com/in/TODO", "https://github.com/TODO"],
 };
