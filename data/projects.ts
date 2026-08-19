@@ -218,9 +218,27 @@ export const projects: Project[] = [
     id: "fedis-ecommerce",
     title: "E-Commerce App",
     image: "/projects/fedis-ecommerce.png",
-    description: "Built during the FEDIS internship.",
-    tech: ["React", "TypeScript", "Zustand", "Axios", "Tailwind CSS"],
+    description:
+      "this is a modern e-commerce application built with React, TypeScript, Zustand, Axios, Tailwind CSS, flowbite React, and React Router DOM. It features product listings, shopping cart functionality, and a seamless user experience.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Zustand",
+      "Axios",
+      "Tailwind CSS",
+      "flowbite React",
+      "React router dom",
+    ],
+    featured: true,
+    githubUrl: "https://github.com/emanatiya87/products.git",
+    liveUrl: "https://products-orpin-three.vercel.app/",
     category: "internship",
+    problem:
+      "The project was built during the FEDIS internship, where the goal was to create a modern e-commerce application that could handle product listings and shopping cart functionality. The challenge was to implement these features in a way that was both scalable and maintainable using state management, while also providing a seamless user experience.",
+    approach:
+      "Implemented a modern e-commerce application using React and TypeScript, with Zustand for state management to handle product listings and shopping cart functionality. Used Axios for API requests to fetch product data and Tailwind CSS for responsive styling. Integrated flowbite React components for UI elements and React Router DOM for navigation between pages. Focused on creating a scalable architecture that allows for easy addition of new features in the future.",
+    result:
+      "Delivered a fully functional e-commerce application with a clean and responsive UI, allowing users to browse products, add items to their shopping cart, and manage their selections seamlessly. The use of Zustand for state management ensured efficient updates to the UI without unnecessary re-renders, resulting in a smooth user experience. The project serves as a solid foundation for further enhancements and feature additions.",
   },
   {
     id: "todolist",
@@ -248,23 +266,22 @@ export const projects: Project[] = [
       "A lightweight, fully typed to-do app with instant UI updates on task changes, a decoupled state layer that's easy to extend (e.g. filters, persistence, categories), and a live deployed demo at todo-list-ts-sandy.vercel.app. The project became a hands-on foundation for understanding lightweight state management (Zustand) as an alternative to Redux/Context.",
   },
   {
-    id: "quotes-app",
-    title: "Quotes Mobile App",
-    image: "/projects/quotes-app.png",
-    description:
-      "Displays inspirational quotes with a clean UI, integrated with an API.",
-    tech: ["Flutter"],
-    category: "personal",
-  },
-  ,
-  {
     id: "social-media",
     title: "Social Media App",
-    image: "/projects/social-media.png",
+    image: "/projects/socialmedia.png",
     description:
-      "Registration, login, add/edit/delete and comment on posts, and profile pages.",
+      "A Facebook-style social media platform built with pure JavaScript, using Axios to consume a REST API. Supports full post and comment CRUD, individual user profiles, paginated feeds, and a complete authentication flow with login, registration, and logout.",
+    problem:
+      "Static or single-page demo projects rarely test the parts of front-end development that matter most in real apps: managing auth state without a framework, keeping UI in sync with server data after edits, and handling large, growing datasets like a post feed efficiently. The goal was to build a genuinely interactive social platform — not just a UI mockup — using only vanilla JavaScript and direct API calls, to prove out these fundamentals before relying on framework abstractions.",
+    approach:
+      "Structured the app around Axios for all API communication (fetching, creating, updating, and deleting posts and comments), with the DOM updated manually after each request to reflect the latest state. Built dedicated profile pages per user, driven by dynamic routing/query params, and implemented pagination on the post feed to avoid loading the entire dataset at once. Authentication (login, registration, logout) was handled with token-based session persistence, gating access to protected actions like posting and commenting. Kept logic modular across separate JS files per feature (auth, posts, comments, profile) despite no framework, to keep the codebase maintainable as features grew.",
+    result:
+      "A fully functional social media app with live CRUD on posts and comments, per-user profiles, paginated browsing, and a working auth flow — all without a front-end framework. The project reinforced core JavaScript and API-integration skills (async/await, Axios interceptors, DOM state management) that carried directly into later framework-based projects using React and Zustand.",
     tech: ["Pure JavaScript", "Axios"],
     category: "personal",
+    featured: true,
+    githubUrl: "https://github.com/emanatiya87/social-media-js",
+    liveUrl: "https://social-media-js-sigma.vercel.app/",
   },
   {
     id: "landing-pages",
@@ -279,6 +296,7 @@ export const projects: Project[] = [
     id: "roll-dice",
     title: "Roll Dice Game",
     image: "/projects/roll-dice.png",
+    featured: true,
     description:
       "The Roll Dice Game is a fun and interactive web-based game built using HTML, CSS, and JavaScript. It simulates the rolling of a six-sided dice. When the user clicks the Roll button, the dice image changes to reflect a randomly generated number between 1 and 6, providing a realistic dice-rolling experience.",
     githubUrl: "https://github.com/emanatiya87/Roll-Dice-JS-Game",
