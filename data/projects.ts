@@ -138,6 +138,23 @@ export const projects: Project[] = [
       "Delivered a fully functional, production-ready mobile app with instant search, zero-loss persistent favorites (survives app restarts), and a responsive modern UI. The codebase follows scalable architecture patterns, handles network failures gracefully, and demonstrates strong proficiency in React Native, state management, API integration, and mobile UX best practices.",
   },
   {
+    id: "Egypt-travel",
+    title: "EgyptTravel — Travel Guide App",
+    image: "/projects/egyptTravel.png",
+    githubUrl: "https://github.com/emanatiya87/egyptTravel",
+    description:
+      "A modern, responsive web application for discovering and managing travel destinations across Egypt. Built with a focus on performance, developer experience, and scalability, the app features a dynamic landing page, interactive destination cards, and full CRUD functionality powered by a lightweight mock backend.",
+    tech: ["Next.js", "Tailwind CSS", "Json Server"],
+    category: "internship",
+    featured: true,
+    problem:
+      "Travel and tourism platforms often require heavy backend infrastructure to manage dynamic content, which leads to: - Slow initial page loads and poor SEO due to pure client-side rendering - Complex CRUD workflows that slow down prototyping and testing - Local development friction (port conflicts, CORS issues, hardcoded URLs) - Difficulty balancing fast static performance with real-time data updates",
+    approach:
+      "Hybrid Component Architecture:** Split server-side data fetching from client-side interactivity using Next.js App Router. Server components handle ISR caching, while client components manage user interactions (edit/delete). - **Incremental Static Regeneration (ISR):** Implemented `revalidate: 60` to cache destination data for 60 seconds, delivering near-instant initial loads while automatically refreshing content in the background. - **Lightweight Mock Backend:** Integrated JSON Server as a zero-config REST API to enable rapid CRUD development without database setup overhead. - **Environment & Port Standardization:** Centralized API configuration using `.env.local` and explicitly separated frontend (`:3000`) and backend (`:3002`) ports to eliminate `EADDRINUSE` conflicts and CORS issues. - **Modular Component Design:** Built reusable, self-contained components (`PlaceCard`, `DestinationsClient`) with isolated state, proper prop drilling, and error boundaries for maintainability. - **Developer Experience Optimization:** Streamlined local setup with `concurrently` for parallel server execution and added robust network error handling with retry fallbacks. ",
+    result:
+      "🚀 High Performance: Achieved sub-second initial page loads through ISR and server-side prefetching. - 🔄 Seamless CRUD Operations: Full create, read, update, and delete workflows with optimistic UI updates and graceful error handling. - 🌐 SEO & DX Optimized: Static pre-rendering improves search visibility, while environment-driven configuration ensures zero hardcoding and effortless backend migration. - 📱 Production-Ready Architecture: Clean component structure, responsive Tailwind UI, and isolated client/server logic make the app highly scalable and deployment-ready. - 💼 Portfolio-Ready: Demonstrates modern Next.js patterns, effective state/data management, local environment debugging, and performance optimization techniques. ",
+  },
+  {
     id: "fedis-recipe-app",
     title: "Recipe App",
     image: "/projects/fedis-recipe-app.png",
@@ -235,16 +252,34 @@ export const projects: Project[] = [
     id: "roll-dice",
     title: "Roll Dice Game",
     image: "/projects/roll-dice.png",
-    description: "A simple dice-rolling game.",
-    tech: ["JavaScript"],
+    description:
+      "The Roll Dice Game is a fun and interactive web-based game built using HTML, CSS, and JavaScript. It simulates the rolling of a six-sided dice. When the user clicks the Roll button, the dice image changes to reflect a randomly generated number between 1 and 6, providing a realistic dice-rolling experience.",
+    githubUrl: "https://github.com/emanatiya87/Roll-Dice-JS-Game",
+    liveUrl: "https://emanatiya87.github.io/Roll-Dice-JS-Game/",
+    problem:
+      "Many people enjoy simple, interactive games for entertainment, but often lack accessible, browser-based options that don't require downloads or installations.",
+    approach:
+      "Developed a lightweight, browser-based dice game using vanilla JavaScript, HTML, and CSS. Implemented event listeners for user interactions, random number generation for dice rolls, and dynamic DOM manipulation to update the game state and display results in real-time.",
+    result:
+      "A fully functional, interactive dice-rolling game that runs directly in the browser. Users can roll the dice with a click, see immediate results, and enjoy a simple gaming experience without any additional software requirements.",
+    tech: ["JavaScript", "HTML", "CSS", "bootstrap"],
     category: "personal",
   },
   {
     id: "azkar",
     title: "Azkar Website",
     image: "/projects/azkar.png",
-    description: "Prayer times via API, with a dhikr counter.",
-    tech: ["JavaScript", "API"],
+    description:
+      "A real-life application of JavaScript that displays daily Islamic Azkar. This project demonstrates how I used core JS skills—like DOM manipulation and event handling—to build a useful and interactive tool for everyday use.and Prayer times via API",
+    tech: ["JavaScript", "API", "bootstrap"],
     category: "personal",
+    githubUrl: "https://github.com/emanatiya87/Azkar",
+    liveUrl: "https://emanatiya87.github.io/Azkar/",
+    problem:
+      "Many Muslims struggle to consistently remember and recite daily Azkar, and often lack a centralized, user-friendly platform that provides both Azkar and accurate prayer times based on their location.",
+    approach:
+      "Developed a responsive web application using vanilla JavaScript, HTML, and CSS (Bootstrap) to create an interactive interface for displaying daily Azkar. Implemented an API integration to fetch real-time prayer times based on the user's selected city. Designed a built-in counter feature to help users track their recitations, and incorporated light/dark mode toggling for user comfort. Ensured the application is mobile-friendly and accessible across various devices.",
+    result:
+      "A user-friendly and fully responsive Islamic Azkar website that offers a rich collection of various Azkar, complete with a built-in counter for easy tracking. The platform also integrates YouTube videos and playlists to enhance the spiritual experience, and it supports both light and dark modes for user comfort. Additionally, the website dynamically displays daily prayer times based on the user's selected city using an API, and it automatically updates the Hijri (Islamic) date, ensuring accurate and up-to-date information every day.",
   },
 ];
