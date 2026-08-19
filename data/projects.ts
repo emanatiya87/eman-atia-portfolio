@@ -189,6 +189,32 @@ export const projects: Project[] = [
       "Created a more flexible and cost-effective menu solution that reduces long-term printing expenses and ensures customers always see the latest menu.",
   },
   {
+    id: "movie-app",
+    title: "Movie App",
+    image: "/projects/movie-app.png",
+    description:
+      "A full-stack-feeling movie browsing application built with React, Redux Toolkit, and Material UI. Users can browse a movie catalog, search by title, add/edit/delete entries, save favourites, and create an account to log in — all deployed as a fully static frontend with no traditional backend server.",
+    tech: [
+      "React",
+      "vite",
+      "javascript",
+      "bootstrap",
+      "MUI",
+      "Supabase",
+      "React router dom",
+    ],
+    category: "personal",
+    featured: true,
+    liveUrl: "https://movie-app-sigma-roan-91.vercel.app/",
+    githubUrl: "https://github.com/emanatiya87/movie-app",
+    problem:
+      "The project started with json-server as a local mock REST API during development. That approach broke the moment it came time to deploy: static hosting platforms like Vercel and Netlify can't run a persistent Node process, so the backend simply disappeared in production. On top of that, the app needed real user authentication — but storing plaintext passwords in a mock JSON file was never a viable option, even for a demo.",
+    approach:
+      "Replaced json-server with JSONBin.io, a hosted JSON store, and re-architected all data writes around its constraints — since JSONBin has no per-item routes, every add/edit/delete operation fetches the current dataset, modifies it in memory, and pushes the full dataset back. Consolidated state management into a single Redux Toolkit store (movies + auth), removing a redundant Context provider that risked falling out of sync with Redux. Integrated Supabase Auth for real password hashing and session handling, syncing Supabase's token-based session with Redux state so the UI (navbar avatar, protected actions) reacts instantly to login/logout.",
+    result:
+      "A fully deployable, static-hosted movie app with working search, full CRUD, persistent favourites, and real authentication — no backend server required. The project doubles as a practical case study in working around the limitations of backend-less architectures, and in keeping client state (Redux) correctly synchronized with an external source of truth (Supabase's session token).",
+  },
+  {
     id: "fedis-ecommerce",
     title: "E-Commerce App",
     image: "/projects/fedis-ecommerce.png",
@@ -197,12 +223,29 @@ export const projects: Project[] = [
     category: "internship",
   },
   {
-    id: "fedis-todolist",
+    id: "todolist",
     title: "To-Do List App",
-    image: "/projects/fedis-todolist.png",
-    description: "Built during the FEDIS internship.",
-    tech: ["React", "TypeScript", "Zustand", "Axios", "Tailwind CSS"],
+    image: "/projects/todolist.png",
+    description:
+      "A modern To-Do List app built with React, TypeScript, Zustand, and TailwindCSS — fast, scalable, and deployed on Vercel.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Zustand",
+      "Axios",
+      "Tailwind CSS",
+      "React router dom",
+    ],
     category: "internship",
+    featured: true,
+    liveUrl: "https://todo-list-ts-sandy.vercel.app/",
+    githubUrl: "https://github.com/emanatiya87/todoList-ts",
+    problem:
+      "Most to-do list tutorials stop at basic CRUD with useState, which doesn't hold up once state needs to be shared across components or scale into a real app. The goal was to build a task manager that felt production-grade: type-safe from the ground up, fast to develop against, and using a state management pattern that avoids prop-drilling or unnecessary re-renders — while keeping the UI clean and responsive.",
+    approach:
+      "Zustand for state — chose Zustand over Context API or Redux for global task state (add/delete/update), since it avoids boilerplate while still giving predictable, centralized state outside the component tree. TypeScript throughout — strict typing on task models and store actions to catch bugs at compile time and make the store's shape self-documenting. Vite — used for the dev server and build pipeline, taking advantage of HMR for a fast iteration loop while wiring up the store and UI. TailwindCSS — utility-first styling for a responsive layout without custom CSS overhead. Deployment — shipped to Vercel for a live, shareable demo.",
+    result:
+      "A lightweight, fully typed to-do app with instant UI updates on task changes, a decoupled state layer that's easy to extend (e.g. filters, persistence, categories), and a live deployed demo at todo-list-ts-sandy.vercel.app. The project became a hands-on foundation for understanding lightweight state management (Zustand) as an alternative to Redux/Context.",
   },
   {
     id: "quotes-app",
@@ -213,30 +256,14 @@ export const projects: Project[] = [
     tech: ["Flutter"],
     category: "personal",
   },
-  {
-    id: "todolist-zustand",
-    title: "To-Do List — Zustand + MUI",
-    image: "/projects/todolist-zustand.png",
-    description:
-      "To-do list app with state management and Material UI components.",
-    tech: ["React", "Zustand", "Material UI"],
-    category: "personal",
-  },
+  ,
   {
     id: "social-media",
     title: "Social Media App",
     image: "/projects/social-media.png",
     description:
       "Registration, login, add/edit/delete and comment on posts, and profile pages.",
-    tech: ["JavaScript", "Axios"],
-    category: "personal",
-  },
-  {
-    id: "todolist-filter",
-    title: "To-Do List with Filtering",
-    image: "/projects/todolist-filter.png",
-    description: "Vanilla JS to-do list with task filtering.",
-    tech: ["JavaScript"],
+    tech: ["Pure JavaScript", "Axios"],
     category: "personal",
   },
   {
