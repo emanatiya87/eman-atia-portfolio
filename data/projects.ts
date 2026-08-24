@@ -42,6 +42,8 @@ export const projects: Project[] = [
     ],
     category: "internship",
     featured: true,
+    githubUrl: "https://github.com/Amr-Khaled233/PropertyPulse-Web",
+    liveUrl: "https://property-pulse-web-server.vercel.app/",
     problem:
       "Evaluating a property as an investment means pulling together listings, rental yields, neighborhood data, economic indicators, and local regulations from scattered sources — slow, fragmented, and easy to get wrong.",
     approach:
@@ -155,14 +157,16 @@ export const projects: Project[] = [
       "🚀 High Performance: Achieved sub-second initial page loads through ISR and server-side prefetching. - 🔄 Seamless CRUD Operations: Full create, read, update, and delete workflows with optimistic UI updates and graceful error handling. - 🌐 SEO & DX Optimized: Static pre-rendering improves search visibility, while environment-driven configuration ensures zero hardcoding and effortless backend migration. - 📱 Production-Ready Architecture: Clean component structure, responsive Tailwind UI, and isolated client/server logic make the app highly scalable and deployment-ready. - 💼 Portfolio-Ready: Demonstrates modern Next.js patterns, effective state/data management, local environment debugging, and performance optimization techniques. ",
   },
   {
-    id: "fedis-recipe-app",
-    title: "Recipe App",
-    image: "/projects/fedis-recipe-app.png",
+    id: "recipes",
+    title: "Recipe Website",
+    image: "/projects/recipe-website.png",
     description:
       "Recipe web app with filtering, search, and favorites, built during the FEDIS internship.",
     tech: ["Next.js", "TypeScript"],
     category: "internship",
     featured: true,
+    liveUrl: "https://recipes-two-jade.vercel.app/",
+    githubUrl: "https://github.com/emanatiya87/recipes",
   },
   {
     id: "joumrik-cafe",
@@ -286,11 +290,19 @@ export const projects: Project[] = [
   {
     id: "landing-pages",
     title: "Responsive Landing Pages",
-    image: "/projects/landing-pages.png",
+    image: "/projects/jadoo.png",
     description:
       "A set of responsive landing pages: interior design (Bootstrap), restaurant and travel company (pure CSS).",
     tech: ["Bootstrap", "CSS"],
     category: "personal",
+    liveUrl: "https://emanatiya87.github.io/jadoo-P1Webmaster-/",
+    githubUrl: "https://github.com/emanatiya87/jadoo-P1Webmaster-",
+    problem:
+      "These learning projects were built to move beyond static layouts and understand how real responsive websites are structured. The challenge was creating polished landing pages from scratch while practicing layout, responsive behavior, and interactive browser experiences without relying on a front-end framework.",
+    approach:
+      "Designed and implemented multiple landing pages using semantic HTML, custom CSS, Bootstrap, and vanilla JavaScript. Built the layouts from the ground up, using responsive grids, flexbox, reusable styling patterns, and media queries to support different screen sizes. Added JavaScript-driven interactions and refined the pages through hands-on iteration while learning how structure, styling, and behavior work together.",
+    result:
+      "Delivered a collection of responsive landing pages for interior design, restaurant, and travel concepts. These projects strengthened my fundamentals in HTML, CSS, Bootstrap, JavaScript, responsive design, and DOM-based interaction, creating a practical foundation for my later React and Next.js work.",
   },
   {
     id: "roll-dice",
