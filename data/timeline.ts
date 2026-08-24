@@ -32,6 +32,19 @@ export const timeline: TimelineEntry[] = [
     tech: ["React", "Next.js", "TypeScript"],
   },
   {
+    id: "manara",
+    sortDate: "2026-07",
+    date: "Jul 2026 — Aug 2026",
+    title: "Front End Engineering with React",
+    org: "Manara",
+    logo: "/logos/certificate-manara.png",
+    category: "education",
+    status: "completed",
+    description:
+      "Completed Manara's Frontend Engineering with React learning path — covering modern JavaScript, Node.js fundamentals, and React (components, hooks, routing, and state management) for building production-ready front-end applications.",
+    tech: ["React", "JavaScript", "TypeScript"],
+  },
+  {
     id: "ischool",
     sortDate: "2026-04",
     date: "Apr 2026 — May 2026",
