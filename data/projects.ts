@@ -26,6 +26,48 @@ export const projectCategoryLabels: Record<ProjectCategory | "all", string> = {
 
 export const projects: Project[] = [
   {
+    id: "home-real-estate",
+    title: "Home New Cairo — Real Estate Platform",
+    description:
+      "A bilingual (English/Arabic) real estate platform with public property browsing, search and filtering, seller submission workflow with admin approval, and a full admin dashboard for managing properties, users, submissions, and customer inquiries. Built as a team project — I led the frontend while a backend developer built the FastAPI service, based on a shared Figma design.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "next-intl",
+      "React Hook Form",
+      "Zod",
+      "Zustand",
+      "FastAPI",
+    ],
+    category: "freelance",
+    image: "/projects/home.png",
+    featured: true,
+    githubUrl: "https://github.com/Lucifer3224/Home",
+    problem:
+      "Real estate agencies need a way to list properties, let sellers submit listings for review, and let potential buyers browse, search, and reach out — all in both English and Arabic, with a proper admin workflow instead of manual spreadsheet management.",
+    approach:
+      "Worked as part of a two-person team: I owned the frontend, while a backend developer built and iterated on the FastAPI service in parallel — the API surface evolved throughout the build (e.g. seller relationship model changed mid-project), which meant keeping the frontend's types and forms in sync as the backend's schema changed. UI was implemented from a shared Figma design (https://www.figma.com/design/EhWCf1JRDViDsHxOZ2pxZM/Home-New-Cairo?node-id=139-1539). On the frontend: Next.js App Router with Server Actions handling all writes (auth-gated via httpOnly JWT cookies), a service layer wrapping every backend endpoint, and a single shared fetch client with timeout + retry. Forms use React Hook Form + Zod validated against the backend's actual schema constraints. Full URL-based i18n (English/Arabic with RTL) via next-intl. The admin dashboard supports full CRUD on properties, an approve/reject workflow for seller-submitted listings, image uploads, and dedicated views for customer and seller leads.",
+    result:
+      "TODO — project is still in progress; not yet deployed. Update once live: deployment link, and outcomes if measurable.",
+  },
+  {
+    id: "silviano-accessories",
+    title: "Silviano — Wedding & Party Accessories Store",
+    image: "/projects/silviano-accessories.png",
+    description:
+      "Freelance e-commerce storefront for Silviano, a wedding and party accessories brand (crowns, headpieces, earrings, custom name-personalized tiaras). Arabic-first, mobile-optimized, and deployed on Hostinger.",
+    tech: ["Hostinger AI Website Builder", "No-Code", "Arabic Localization"],
+    category: "freelance",
+    liveUrl: "https://silvianoacc.com/",
+    problem:
+      "The client needed a professional, mobile-first storefront to showcase wedding and party accessories and handle custom-order requests — like name-personalized tiaras — without the cost and maintenance overhead of a custom-coded stack.",
+    approach:
+      "Built and launched the site on Hostinger's AI website builder, structuring product categories (crowns, headpieces, sets, soft jewelry, earrings), an Arabic-first layout, and a direct WhatsApp deep-link for custom-order inquiries instead of a full cart/checkout flow. Integrated social channels (Instagram, TikTok, Snapchat, Facebook) and standard policy pages (returns, privacy, jewelry care).",
+    result:
+      "A live storefront at silvianoacc.com giving the client full self-serve control over products and content through the builder's dashboard, with a low-friction WhatsApp path from browsing straight to custom orders — no backend or ongoing dev maintenance required.",
+  },
+  {
     id: "property-pulse",
     title: "PropertyPulse — AI-Powered Real Estate Investment Advisor",
     image: "/projects/property-pulse.png",
