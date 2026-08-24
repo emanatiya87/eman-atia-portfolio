@@ -124,7 +124,7 @@ export const projects: Project[] = [
   {
     id: "recipes-app",
     title: "Recipe App",
-    image: "/projects/recipeapp.png",
+    image: "/projects/recipe-app.jpg",
     description:
       "A modern React Native recipe app with search, favorites, persistent storage (AsyncStorage), and clean navigation. Built with DummyJSON API.",
     tech: ["React Native", "TypeScript", "AsyncStorage", "React Navigation"],

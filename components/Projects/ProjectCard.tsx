@@ -23,7 +23,9 @@ export function ProjectCard({ project }: { project: Project }) {
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-accent/10 to-panel">
-            <span className="font-mono text-xs text-muted">{project.title}</span>
+            <span className="font-mono text-xs text-muted">
+              {project.title}
+            </span>
           </div>
         )}
       </div>
@@ -33,15 +35,27 @@ export function ProjectCard({ project }: { project: Project }) {
           {projectCategoryLabels[project.category]}
         </span>
 
-        <h3 className="text-base font-semibold text-foreground">{project.title}</h3>
-        <p className="mt-1 flex-1 text-sm leading-relaxed text-muted">
+        {/* Fixed 2-line clamp for the title keeps every card's header the
+            same height even when titles vary a lot in length. */}
+        <h3 className="line-clamp-2 min-h-[2.75rem] text-base font-semibold text-foreground">
+          {project.title}
+        </h3>
+
+        {/* min-h + line-clamp-3 together guarantee every card reserves the
+            exact same vertical space for the description, whether the text
+            is one sentence or a full paragraph — short text doesn't shrink
+            the card, long text doesn't stretch it. */}
+        <p className="mt-1 line-clamp-3 min-h-[4.25rem] text-sm leading-relaxed text-muted">
           {project.description}
         </p>
 
         {project.tech.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1.5">
-            {project.tech.map((t) => (
-              <span key={t} className="rounded-md bg-white/5 px-2 py-0.5 text-[11px] text-muted">
+            {project.tech.slice(0, 5).map((t) => (
+              <span
+                key={t}
+                className="rounded-md bg-white/5 px-2 py-0.5 text-[11px] text-muted"
+              >
                 {t}
               </span>
             ))}
