@@ -1,31 +1,40 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function TypewriterText({
   text,
-  speedMs = 18,
+  durationMs = 2400,
   className,
 }: {
   text: string;
-  speedMs?: number;
+  durationMs?: number;
   className?: string;
 }) {
   const [count, setCount] = useState(0);
+  const frameRef = useRef<number | null>(null);
+  const startRef = useRef<number | null>(null);
 
   useEffect(() => {
     setCount(0);
-    const interval = setInterval(() => {
-      setCount((c) => {
-        if (c >= text.length) {
-          clearInterval(interval);
-          return c;
-        }
-        return c + 1;
-      });
-    }, speedMs);
-    return () => clearInterval(interval);
-  }, [text, speedMs]);
+    startRef.current = null;
+
+    const step = (timestamp: number) => {
+      if (startRef.current === null) startRef.current = timestamp;
+      const elapsed = timestamp - startRef.current;
+      const progress = Math.min(elapsed / durationMs, 1);
+      setCount(Math.floor(progress * text.length));
+
+      if (progress < 1) {
+        frameRef.current = requestAnimationFrame(step);
+      }
+    };
+
+    frameRef.current = requestAnimationFrame(step);
+    return () => {
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
+    };
+  }, [text, durationMs]);
 
   return (
     <p className={className}>
