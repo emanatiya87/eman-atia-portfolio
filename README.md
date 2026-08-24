@@ -71,7 +71,7 @@ Open http://localhost:3000
 
 ## Assets you still need to add
 
-- `public/avatar.jpg` — your photo (Hero)
+- `public/Avatar.jpg` — your photo (Hero)
 - `public/logos/{id}.png` — one per timeline entry (check `id` field in `data/timeline.ts`), e.g. `ecs.png`, `iti.png`, `fedis.png`... Falls back to initials automatically if missing.
 - `public/projects/{id}.png` — one per project (check `id` field in `data/projects.ts`), e.g. `chatpop.png`, `property-pulse.png`... Falls back to a placeholder if missing.
 

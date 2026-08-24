@@ -59,7 +59,7 @@ export function Hero() {
         <div className="relative h-32 w-32 overflow-hidden rounded-full ring-2 ring-accent/40 sm:h-40 sm:w-40">
           {/* Swap /avatar.jpg for a real photo, or drop this block for an initials/icon avatar */}
           <Image
-            src="/avatar.jpg"
+            src="/Avatar.jpg"
             alt="Eman Atia"
             fill
             sizes="160px"
