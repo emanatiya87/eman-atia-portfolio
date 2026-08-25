@@ -347,6 +347,41 @@ export const projects: Project[] = [
       "Delivered a collection of responsive landing pages for interior design, restaurant, and travel concepts. These projects strengthened my fundamentals in HTML, CSS, Bootstrap, JavaScript, responsive design, and DOM-based interaction, creating a practical foundation for my later React and Next.js work.",
   },
   {
+    id: "interior-design-landing-page",
+    title: "Interior Design Responsive Landing Pages",
+    image: "/projects/interior.png",
+    description:
+      "Responsive landing pages for an interior design company (pure CSS).",
+    tech: ["CSS", "html", "Responsive web design", "Bootstrap"],
+    category: "personal",
+    liveUrl:
+      "https://emanatiya87.github.io/Interior-design-landing-page-Bootstrap/",
+    githubUrl:
+      "https://github.com/emanatiya87/Interior-design-landing-page-Bootstrap",
+    problem:
+      "These learning projects were built to move beyond static layouts and understand how real responsive websites are structured. The challenge was creating polished landing pages from scratch while practicing layout, responsive behavior, and interactive browser experiences without relying on a front-end framework.",
+    approach:
+      "Designed and implemented multiple landing pages using semantic HTML, custom CSS,Bootstrap, and vanilla JavaScript. Built the layouts from the ground up, using responsive grids, flexbox, reusable styling patterns, and media queries to support different screen sizes. Added JavaScript-driven interactions and refined the pages through hands-on iteration while learning how structure, styling, and behavior work together.",
+    result:
+      "Delivered a responsive landing pages for interior design, restaurant, and travel concepts. These projects strengthened my fundamentals in HTML, CSS, Bootstrap, JavaScript, responsive design, and DOM-based interaction, creating a practical foundation for my later React and Next.js work.",
+  },
+  {
+    id: "restaurant-landing-page",
+    title: "Restaurant Responsive Landing Pages",
+    image: "/projects/resturant.png",
+    description: "Responsive landing pages for a restaurant (pure CSS).",
+    tech: ["CSS", "html", "Responsive web design"],
+    category: "personal",
+    liveUrl: "https://emanatiya87.github.io/Project2SEF",
+    githubUrl: "https://github.com/emanatiya87/Project2SEF",
+    problem:
+      "These learning projects were built to move beyond static layouts and understand how real responsive websites are structured. The challenge was creating polished landing pages from scratch while practicing layout, responsive behavior, and interactive browser experiences without relying on a front-end framework.",
+    approach:
+      "Designed and implemented multiple landing pages using semantic HTML, custom CSS, and vanilla JavaScript. Built the layouts from the ground up, using responsive grids, flexbox, reusable styling patterns, and media queries to support different screen sizes. Added JavaScript-driven interactions and refined the pages through hands-on iteration while learning how structure, styling, and behavior work together.",
+    result:
+      "Delivered a responsive landing pages for interior design, restaurant, and travel concepts. These projects strengthened my fundamentals in HTML, CSS, Bootstrap, JavaScript, responsive design, and DOM-based interaction, creating a practical foundation for my later React and Next.js work.",
+  },
+  {
     id: "roll-dice",
     title: "Roll Dice Game",
     image: "/projects/roll-dice.png",

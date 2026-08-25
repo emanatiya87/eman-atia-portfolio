@@ -126,7 +126,15 @@ export const timeline: TimelineEntry[] = [
     status: "completed",
     description:
       "Led a team of 9 members, managing development and maintenance of the activity's website, deployed on Hostinger.",
-    tech: [],
+    tech: [
+      "leadership",
+      "time management",
+      "React",
+      "php",
+      "javascript",
+      "Tailwind CSS",
+      "Hostinger",
+    ],
   },
   {
     id: "link-development",
@@ -151,8 +159,8 @@ export const timeline: TimelineEntry[] = [
     category: "teaching",
     status: "completed",
     description:
-      "Conducted workshops on web development and content creation for 1st and 2nd year students.",
-    tech: [],
+      "Conducted workshops on web development and content creation for 1st and 2nd year students. my work shop material https://drive.google.com/drive/folders/1xnOWfUNLTqp3Nzejex9uY8cp11uPvwso",
+    tech: ["presentation skills", "teaching", "mentorship", "content creation"],
   },
   {
     id: "asu-career-center",
@@ -164,7 +172,7 @@ export const timeline: TimelineEntry[] = [
     category: "activity",
     status: "completed",
     description: "Coordinated with HR professionals from Elsewedy Group.",
-    tech: [],
+    tech: ["volunteering", "coordination", "communication"],
   },
   {
     id: "meca",
@@ -177,7 +185,7 @@ export const timeline: TimelineEntry[] = [
     status: "completed",
     description:
       "Business case competition — developed a business plan for an electric car company in Egypt and presented it to ExxonMobil experts. Won 3rd place.",
-    tech: [],
+    tech: ["presentation skills", "teamwork", "business strategy"],
   },
   {
     id: "ain-shams",
