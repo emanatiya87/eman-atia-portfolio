@@ -1,20 +1,34 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Download } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { TypewriterText } from "@/components/TypewriterText";
 import { SpotlightLayer } from "@/components/SpotlightLayer";
 
 const bio =
   "A motivated front-end developer with hands-on experience in React, Next.js and TypeScript — gained through internships, freelance projects and an intensive ITI training program. Skilled in building responsive, production-ready web applications and integrating CMS solutions.";
 
-const socials = [
+const bioClassName = "max-w-2xl text-balance text-base text-muted sm:text-lg";
+
+// Code-split: the animation logic (rAF loop + state) loads as its own chunk
+// *after* the rest of Hero (and the rest of the page — Timeline, Projects,
+// etc.) has already mounted, instead of being part of the same synchronous
+// bundle. ssr:false means the server sends the plain static bio text below
+// as the initial HTML — no blank flash, no layout shift — and the animated
+// version swaps in once its chunk has loaded and hydrated, fully decoupled
+// from everything else on the page.
+const TypewriterText = dynamic(
+  () => import("@/components/TypewriterText").then((m) => m.TypewriterText),
   {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/eman-atiya-6245b0294/",
+    ssr: false,
+    loading: () => <p className={bioClassName}>{bio}</p>,
   },
-  { label: "GitHub", href: "https://github.com/emanatiya87" },
+);
+
+const socials = [
+  { label: "LinkedIn", href: "#" }, // TODO: replace with real URL
+  { label: "GitHub", href: "#" }, // TODO: replace with real URL
 ];
 
 export function Hero() {
@@ -30,7 +44,6 @@ export function Hero() {
       onMouseMove={handleMouseMove}
       className="group relative scroll-mt-20 overflow-hidden bg-ink px-6 py-24 sm:py-32"
     >
-      {/* ambient circuit backdrop */}
       <svg
         aria-hidden
         className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.07]"
@@ -52,14 +65,12 @@ export function Hero() {
         <circle cx="620" cy="500" r="4" fill="#4CD9E8" />
       </svg>
 
-      {/* cursor-reactive spotlight */}
       <SpotlightLayer />
 
       <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 text-center">
         <div className="relative h-32 w-32 overflow-hidden rounded-full ring-2 ring-accent/40 sm:h-40 sm:w-40">
-          {/* Swap /avatar.jpg for a real photo, or drop this block for an initials/icon avatar */}
           <Image
-            src="/Avatar.jpg"
+            src="/avatar.jpg"
             alt="Eman Atia"
             fill
             sizes="160px"
@@ -75,14 +86,10 @@ export function Hero() {
           Eman Atia
         </h1>
 
-        <TypewriterText
-          text={bio}
-          className="max-w-2xl text-balance text-base text-muted sm:text-lg"
-        />
+        <TypewriterText text={bio} className={bioClassName} />
 
         <div className="flex flex-wrap items-center justify-center gap-3">
           <a
-            target="_blank"
             href="/resume.pdf"
             download
             className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
@@ -94,7 +101,6 @@ export function Hero() {
             <a
               key={s.label}
               href={s.href}
-              target="_blank"
               className={cn(
                 "rounded-full border border-accent/30 px-5 py-2 text-sm font-medium text-foreground",
                 "transition-colors hover:border-accent hover:bg-accent/10",
