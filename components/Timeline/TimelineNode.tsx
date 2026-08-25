@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import type { TimelineEntry } from "@/data/timeline";
 import { cn } from "@/lib/utils";
 import { LogoAvatar } from "@/components/LogoAvatar";
@@ -16,21 +15,37 @@ export function TimelineNode({
   entry: TimelineEntry;
   align?: "left" | "right";
 }) {
+  // Plain div, not motion.div: content is visible in the server-rendered
+  // HTML immediately, with no dependency on JS hydrating or an
+  // IntersectionObserver firing before it's shown. `animate-fade-in` is a
+  // one-shot CSS animation (see globals.css) — pure decoration layered on
+  // top of already-visible content, never a gate that hides it.
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.4 }}
+    <div
       className={cn(
-        "rounded-xl border border-white/10 bg-panel/60 p-5 backdrop-blur-sm",
-        align === "right" && "lg:text-right"
+        "animate-fade-in rounded-xl border border-white/10 bg-panel/60 p-5 backdrop-blur-sm",
+        align === "right" && "lg:text-right",
       )}
     >
       <div
         className={cn(
+          "mb-3 flex items-center gap-3",
+          align === "right" && "lg:flex-row-reverse",
+        )}
+      >
+        <LogoAvatar src={entry.logo} name={entry.org} size={36} />
+        <div className={cn(align === "right" && "lg:text-right")}>
+          <h3 className="text-lg font-semibold text-foreground">
+            {entry.title}
+          </h3>
+          <p className="text-sm text-accent">{entry.org}</p>
+        </div>
+      </div>
+
+      <div
+        className={cn(
           "mb-2 flex flex-wrap items-center gap-2",
-          align === "right" && "lg:justify-end"
+          align === "right" && "lg:justify-end",
         )}
       >
         <span className="font-mono text-xs text-muted">{entry.date}</span>
@@ -38,25 +53,12 @@ export function TimelineNode({
           <span
             className={cn(
               "rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide",
-              statusStyles[entry.status]
+              statusStyles[entry.status],
             )}
           >
             {entry.status}
           </span>
         )}
-      </div>
-
-      <div
-        className={cn(
-          "mb-3 flex items-center gap-3",
-          align === "right" && "lg:flex-row-reverse"
-        )}
-      >
-        <LogoAvatar src={entry.logo} name={entry.org} size={36} />
-        <div className={cn(align === "right" && "lg:text-right")}>
-          <h3 className="text-lg font-semibold text-foreground">{entry.title}</h3>
-          <p className="text-sm text-accent">{entry.org}</p>
-        </div>
       </div>
 
       <p className="text-sm leading-relaxed text-muted">{entry.description}</p>
@@ -65,7 +67,7 @@ export function TimelineNode({
         <div
           className={cn(
             "mt-3 flex flex-wrap gap-1.5",
-            align === "right" && "lg:justify-end"
+            align === "right" && "lg:justify-end",
           )}
         >
           {entry.tech.map((t) => (
@@ -78,6 +80,6 @@ export function TimelineNode({
           ))}
         </div>
       )}
-    </motion.div>
+    </div>
   );
 }
