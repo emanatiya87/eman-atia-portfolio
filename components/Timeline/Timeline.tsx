@@ -8,6 +8,7 @@ import {
 } from "@/data/timeline";
 import { FilterTabs } from "@/components/FilterTabs";
 import { TimelineNode } from "@/components/Timeline/TimelineNode";
+import { SpotlightLayer } from "@/components/SpotlightLayer";
 
 type FilterValue = TimelineCategory | "all";
 
@@ -21,7 +22,6 @@ export function Timeline() {
   const [filter, setFilter] = useState<FilterValue>("all");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
-  // Reset pagination whenever the filter changes so the count stays meaningful
   useEffect(() => {
     setVisibleCount(PAGE_SIZE);
   }, [filter]);
@@ -31,16 +31,30 @@ export function Timeline() {
       filter === "all"
         ? timeline
         : timeline.filter((e) => e.category === filter);
-    // already authored newest-first, but sort defensively by sortDate desc
     return [...filtered].sort((a, b) => (a.sortDate < b.sortDate ? 1 : -1));
   }, [filter]);
 
   const entries = filteredEntries.slice(0, visibleCount);
   const hasMore = visibleCount < filteredEntries.length;
 
+  // Same pattern as Hero: write mouse position straight to CSS variables on
+  // the section itself (no React state), so SpotlightLayer can read them
+  // without triggering a re-render on every mouse move.
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--spot-x", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--spot-y", `${e.clientY - rect.top}px`);
+  };
+
   return (
-    <section id="timeline" className="scroll-mt-20 bg-ink px-6 py-24">
-      <div className="mx-auto max-w-5xl">
+    <section
+      id="timeline"
+      onMouseMove={handleMouseMove}
+      className="group relative scroll-mt-20 overflow-hidden bg-ink px-6 py-24"
+    >
+      <SpotlightLayer />
+
+      <div className="relative mx-auto max-w-5xl">
         <div className="mb-4 text-center">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
             The Journey
